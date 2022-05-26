@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+<mapper namespace="com.example.demo.mapper.UserXMLMapper">
+
+   <!-- 회원가입 -->
+   <insert id="join"
+      parameterType="com.example.demo.vo.UserVO">
+      INSERT INTO TB_user VALUES(NULL,#{user_name},#{user_id},#{user_pwd},#{user_phone},#{user_email},#{user_sex},#{user_birth})
+   </insert>
+   
+   <!-- user_num 자동증가 값 -->
+   <insert id="addAndGetKey" useGeneratedKeys="true" keyProperty="user_num"
+      parameterType="com.example.demo.vo.UserVO">
+      INSERT INTO TB_user VALUES(NULL,#{user_name},#{user_id},#{user_pwd},#{user_phone},#{user_email},#{user_sex},#{user_birth})
+   </insert>
+   
+   <!-- 로그인 -->
+   <select id="login"
+      resultType="com.example.demo.vo.UserVO"
+      parameterType="com.example.demo.vo.UserVO">
+      SELECT *
+      FROM TB_user
+      WHERE user_id = #{user_id} AND user_pwd = #{user_pwd}
+   </select>
+   
+   <!-- 회원 정보-->
+   <select id="userInfo"
+      resultType="com.example.demo.vo.UserVO"
+      parameterType="String">
+      SELECT * FROM TB_user
+      WHERE user_id = #{user_id}   
+   </select>
+   
+   <!-- 회원 정보 수정 -->
+   <update id="userEdit"
+      parameterType="com.example.demo.vo.UserVO">
+      UPDATE TB_user
+      SET user_phone = #{user_phone},   user_email = #{user_email}
+      WHERE user_id = #{user_id}
+   </update>
+   
+   <!-- 회원 탈퇴 -->
+   <delete id="userOut"
+      parameterType="String">
+      DELETE FROM TB_user
+      WHERE user_id = #{user_id}
+   </delete>
+
+
+   <!-- 비밀번호 변경 페이지 -->
+   <select id="userChgPwd"
+      resultType="com.example.demo.vo.UserVO"
+      parameterType="String">
+      SELECT user_id, user_pwd FROM TB_user
+      WHERE user_id = #{user_id}
+   </select>
+   
+   
+   <!-- 비밀번호 변경 기능 -->
+   <update id="userChgPwdProcess"
+      parameterType="com.example.demo.vo.UserVO">
+      UPDATE TB_user
+      SET user_pwd = #{user_pwd}
+      WHERE user_id = #{user_id}
+   </update>
+   
+   <!-- 아이디 중복 체크 -->
+   <select id="idChk" resultType="int"
+      parameterType="com.example.demo.vo.UserVO">
+      SELECT COUNT(*) FROM TB_user
+      WHERE user_id = #{user_id}
+   </select>
+
+</mapper>

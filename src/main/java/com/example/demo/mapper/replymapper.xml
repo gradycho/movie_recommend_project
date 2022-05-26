@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.mapper.ReplyMapper">
+
+	<!-- <insert id="reply_insert"
+		parameterType="com.example.demo.vo.ReplyVO">
+		INSERT INTO TB_reply
+		VALUES (0, #{r_board_num},(SELECT
+		user_num from TB_user where user_id = #{r_user_id}), #{r_user_id},
+		#{reply_content}, now())
+	</insert> -->
+
+	<!-- TB_board reply_count update -->
+	<!-- <update id="replyCount_update"
+		parameterType="com.example.demo.vo.ReplyVO">
+		UPDATE TB_board
+		SET reply_count = 
+			(SELECT count(reply_num) 
+				FROM TB_reply 
+				WHERE r_board_num = #{r_board_num})
+		WHERE board_num = #{r_board_num};
+	</update> -->
+
+
+	<!-- <select id="reply_read" resultType="com.example.demo.vo.ReplyVO"
+		parameterType="Integer">
+		SELECT * FROM TB_reply
+		WHERE r_board_num = #{r_board_num}
+	</select> -->
+
+	<!-- <delete id="reply_delete" parameterType="Integer">
+		DELETE FROM TB_reply
+		WHERE reply_num=#{reply_num}
+	</delete> -->
+
+	<!-- <select id="selectReplyNum" resultType="com.example.demo.vo.ReplyVO"
+		parameterType="Integer">
+		SELECT * FROM TB_reply
+		WHERE reply_num = #{reply_num}
+	</select> -->
+</mapper>
+	

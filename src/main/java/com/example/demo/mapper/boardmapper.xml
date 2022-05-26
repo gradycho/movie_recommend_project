@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.mapper.BoardMapper">
+
+
+	<!-- 게시판에 글 작성하는 쿼리문 -->
+	<!-- <insert id="board_insert"
+		parameterType="com.example.demo.vo.BoardVO">
+		INSERT INTO TB_board
+		VALUES (0, (SELECT user_num from
+			   	TB_user WHERE user_id = #{b_user_id}), #{b_user_id}, #{board_title},
+			   	#{board_content}, now(), 1,0)
+	</insert> -->
+
+
+	<!-- <select id="board_getList"
+		resultType="com.example.demo.vo.BoardVO">
+		SELECT * FROM TB_board
+		ORDER BY board_num desc
+	</select> -->
+
+	<!-- <select id="board_read" resultType="com.example.demo.vo.BoardVO"
+		parameterType="Integer">
+		SELECT * FROM TB_board
+		WHERE board_num = #{board_num}
+	</select> -->
+
+	<!-- <delete id="board_delete" parameterType="Integer">
+		DELETE FROM TB_board
+		WHERE board_num=#{board_num}
+	</delete> -->
+
+	<!-- <update id="board_update"
+		parameterType="com.example.demo.vo.BoardVO">
+		UPDATE TB_board
+		SET board_title=#{board_title},
+			board_content=#{board_content}
+		WHERE board_num=#{board_num}
+	</update> -->
+
+	<!-- <select id="board_search"
+		resultType="com.example.demo.vo.BoardVO" parameterType="String">
+		SELECT * FROM
+		TB_board
+		WHERE board_content LIKE CONCAT('%',#{keyword},'%')
+		OR 	  board_title LIKE CONCAT('%',#{keyword},'%')
+		ORDER BY board_num desc
+	</select> -->
+
+	<!-- 조회수 증가  -->
+	<!-- <update id="board_hitUpdate"
+		parameterType="Integer">
+		UPDATE TB_board
+		SET board_hit = board_hit+1
+		WHERE board_num = #{board_num}
+	</update> -->
+	
+</mapper>
+	

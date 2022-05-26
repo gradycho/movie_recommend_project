@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.mapper.RatingMapper">
+
+	<!-- 유저의 아이디와 영화 코드를 가지고 그 영화의 별점을 가져오는 구문  -->
+	<!-- <select id="select_mvRating" resultType="com.example.demo.vo.RatingVO"
+		parameterType="com.example.demo.vo.RatingVO">
+		SELECT * FROM TB_rating
+		WHERE mv_code = #{mv_code}
+		AND rt_user_id = #{rt_user_id}
+	</select> -->
+
+	<!-- <insert id="rating_insert"
+		parameterType="com.example.demo.vo.RatingVO">
+		INSERT INTO TB_rating
+		VALUES ((select * from (select max(rating_num)+1 from TB_rating)as X), 
+				(SELECT user_num from TB_user WHERE user_id = #{rt_user_id}), 
+				#{rt_user_id}, #{movieId}, #{mv_code},
+				#{user_rating} )
+	</insert> -->
+	
+	<!-- <delete id="rating_delete" parameterType="Integer">
+		DELETE FROM TB_rating
+		WHERE rating_num = #{rating_num}
+	</delete>  -->
+	
+	
+	<!-- <select id="rating_read" resultType="com.example.demo.vo.RatingVO"
+		parameterType="Integer">
+		SELECT * FROM TB_rating
+		WHERE rating_num = #{rating_num}
+	</select> -->
+
+	<!-- <update id="rating_update"
+		parameterType="com.example.demo.vo.RatingVO">
+		UPDATE TB_rating
+		SET user_rating=#{user_rating}
+		WHERE rating_num=#{rating_num}
+	</update>  -->
+	
+	
+</mapper>
+	

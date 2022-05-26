@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.mapper.FileMapper">
+
+	<insert id="file_insert"
+		parameterType="com.example.demo.vo.FileVO">
+		INSERT INTO TB_File
+		VALUES values (0, #{f_board_num},
+		#{file_path},#{file_name});
+	</insert>
+
+
+	<!-- <select id="file_read" resultType="com.example.demo.vo.FileVO"
+		parameterType="Integer">
+		SELECT * FROM TB_board
+		WHERE f_board_num = #{f_board_num}
+	</select> -->
+
+	<delete id="file_delete" parameterType="Integer">
+		DELETE FROM TB_file
+		WHERE
+		file_num=#{file_num}
+	</delete>
+
+	<update id="file_update"
+		parameterType="com.example.demo.vo.FileVO">
+		UPDATE TB_file
+		SET file_path=#{file_path},
+		file_name=#{file_name}
+		WHERE file_num=#{file_num}
+	</update>
+
+	<select id="getMax" resultType="Integer">
+		select max(file_num) from TB_file
+	</select>
+</mapper>
+	

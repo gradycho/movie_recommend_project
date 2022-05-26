@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+
+<!-- NaverLoginBO Class에 대한 Bean 설정 추가 -->
+<beans:bean id="naverLoginBO" class="com.example.demo.naverLogin.NaverLoginBO" />
